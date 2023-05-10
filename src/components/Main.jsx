@@ -8,15 +8,16 @@ const Main = () => {
   const [movies, setMovies] = useState([])
   // Picking a random movie from all the movies
   const movie = movies[Math.floor(Math.random() * movies.length)]
-  console.log(movie)
+  // console.log(movie)
 
   useEffect(() => {
     // fetch(request.apiRequestPopularMovies)
     //   .then(response => response.json())
     //   .then(data => setMovies(data))
-    axios.get(request.apiRequestPopularMovies).then(response => {
-      setMovies(response.data.results)
-    })
+    axios
+      .get(request.apiRequestPopularMovies)
+      .then(response => setMovies(response.data.results))
+      .catch(error => alert("Error: API " + error.message))
   }, [])
 
   return (
