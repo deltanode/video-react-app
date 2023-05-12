@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { AuthContextProvider } from "./context/AuthContext"
 
 const appConfig = createBrowserRouter([
   {
@@ -11,10 +12,10 @@ const appConfig = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <AuthContextProvider>
       <Navbar />
       <RouterProvider router={appConfig} />
-    </div>
+    </AuthContextProvider>
   )
 }
 

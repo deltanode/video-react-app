@@ -7,9 +7,11 @@ const Row = ({ title, fetchURL, rowId }) => {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    axios(fetchURL).then(response => {
-      setMovies(response.data.results).catch(err => alert("Axios Error: " + err.message))
-    })
+    axios(fetchURL)
+      .then(response => {
+        setMovies(response.data.results)
+      })
+      .catch(err => alert("Axios Error: " + err.message))
   }, [fetchURL])
 
   const slideLeft = () => {
@@ -30,7 +32,7 @@ const Row = ({ title, fetchURL, rowId }) => {
 
         <div id={"slider" + rowId} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
           {movies.map((item, index) => (
-            <Movie ket={index} item={item} />
+            <Movie key={index} item={item} />
           ))}
         </div>
 
