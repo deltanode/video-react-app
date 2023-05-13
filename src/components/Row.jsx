@@ -11,8 +11,12 @@ const Row = ({ title, fetchURL, rowId }) => {
       .then(response => {
         setMovies(response.data.results)
       })
-      .catch(err => alert("Axios Error: " + err.message))
-  }, [fetchURL])
+      .catch(err => {
+        console.log("Error API [Row.js]: " + err)
+        // alert("Axios Error API [Row.js]: " + err.message)
+      })
+  }, [])
+  // }, [fetchURL])
 
   const slideLeft = () => {
     var slider = document.getElementById("slider" + rowId)

@@ -17,7 +17,10 @@ const Main = () => {
     axios
       .get(request.apiRequestPopularMovies)
       .then(response => setMovies(response.data.results))
-      .catch(error => alert("Error: API " + error.message))
+      .catch(err => {
+        console.log("Error API [Main.js]: " + err)
+        alert("Axios Error API [Main.js]: " + err.message)
+      })
   }, [])
 
   return (
