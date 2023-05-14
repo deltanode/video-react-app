@@ -9,6 +9,7 @@ import Login from "./pages/Login"
 import Account from "./pages/Account"
 
 import "./index.css"
+import ProtectedRoute from "./components/ProtectedRoute.jsx"
 
 const appConfig = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const appConfig = createBrowserRouter([
       },
       {
         path: "/account",
-        element: <Account />
+        element: (
+          <ProtectedRoute>
+            <Account />
+          </ProtectedRoute>
+        )
       }
     ]
   }
