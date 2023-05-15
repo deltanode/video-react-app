@@ -22,7 +22,7 @@ const Main = () => {
       .catch(err => {
         console.log("[Main.js] API Error - Axios : " + err)
         alert("[Main.js] API Error - Axios : " + err.message)
-        navigate("/signup")
+        navigate("/login")
       })
   }, [])
 
