@@ -19,7 +19,7 @@ const Main = () => {
       .then(response => setMovies(response.data.results))
       .catch(err => {
         console.log("Error API [Main.js]: " + err)
-        alert("Axios Error API [Main.js]: " + err.message)
+        alert("[Main.js] API Error - Axios : " + err.message)
       })
   }, [])
 
