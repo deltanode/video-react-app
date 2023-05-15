@@ -35,7 +35,7 @@ const Row = ({ title, fetchURL, rowId }) => {
         <MdChevronLeft onClick={slideLeft} size={40} className="bg-white opacity-50 hover:opacity-100 rounded-full cursor-pointer z-10 absolute left-3 hidden group-hover:block" />
 
         <div id={"slider" + rowId} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
-          {movies.map((item, index) => (
+          {movies?.map((item, index) => (
             <Movie key={index} item={item} />
           ))}
         </div>
