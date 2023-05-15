@@ -3,13 +3,15 @@ import axios from "axios"
 import request from "../utils/requests"
 import { IMG_URL } from "../utils/constants"
 import { truncateString } from "../utils/helper"
+import {useNavigate } from "react-router-dom"
 
 const Main = () => {
   const [movies, setMovies] = useState([])
   // Picking a random movie from all the movies
   const movie = movies[Math.floor(Math.random() * movies.length)]
   // console.log(movie)
-
+  const navigate = useNavigate()
+  
   useEffect(() => {
     // fetch(request.apiRequestPopularMovies)
     //   .then(response => response.json())
@@ -18,8 +20,9 @@ const Main = () => {
       .get(request.apiRequestPopularMovies)
       .then(response => setMovies(response.data.results))
       .catch(err => {
-        console.log("Error API [Main.js]: " + err)
+        console.log("[Main.js] API Error - Axios : " + err)
         alert("[Main.js] API Error - Axios : " + err.message)
+        navigate("/signup")
       })
   }, [])
 
