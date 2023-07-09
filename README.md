@@ -5,10 +5,12 @@ A video streaming app in React with TailwindCSS & Firebase.
 
 - `React js` as a UI library.
 - `Tailwind CSS` for styling.
-- `Firebase` Intergration
+- `Firebase` Integration
 - `Vite` for bundling.
 - Completely `Responsive UI`.
-- `Best code practice` while developnment 
+- `Best code practice` while development
+- `SignUp` & `Login` functionality
+- `Add, show, or remove` the favorite shows after login
 
 <!--
 ### Quick Code Reference
